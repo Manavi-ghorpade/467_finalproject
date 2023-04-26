@@ -12,20 +12,112 @@ class _MyHomePageState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text("TASK HERO"),
+            title: const Text("TASK HERO"),
         ),
         body: Center(
-          child: Column(
-            children: const <Widget>[
-              SizedBox(height: 16),
-              Text(
-                'YOUR TASKS',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+        child: SingleChildScrollView(
+          child:SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+          child: DataTable(columns: const <DataColumn>[
+            DataColumn(
+              label: Expanded(
+                child: Text(
+                  'Sr. No',
+                  style: TextStyle(fontStyle: FontStyle.italic),
+                ),
               ),
+            ),
+            DataColumn(
+              label: Expanded(
+                child: Text(
+                  'Title',
+                  style: TextStyle(fontStyle: FontStyle.italic),
+                ),
+              ),
+            ),
+            DataColumn(
+              label: Expanded(
+                child: Text(
+                  'Description',
+                  style: TextStyle(fontStyle: FontStyle.italic),
+                ),
+              ),
+            ),
+            DataColumn(
+              label: Expanded(
+                child: Text(
+                  'Date',
+                  style: TextStyle(fontStyle: FontStyle.italic),
+                ),
+              ),
+            ),
+            DataColumn(
+              label: Expanded(
+                child: Text(
+                  'Image',
+                  style: TextStyle(fontStyle: FontStyle.italic),
+                ),
+              ),
+            ),
+            DataColumn(
+              label: Expanded(
+                child: Text(
+                  'Status',
+                  style: TextStyle(fontStyle: FontStyle.italic),
+                ),
+              ),
+            ),
+            DataColumn(
+              label: Expanded(
+                child: Text(
+                  '      ',
+                  style: TextStyle(fontStyle: FontStyle.italic),
+                ),
+              ),
+            ),
+          ],
+            rows: const <DataRow>[
+              DataRow(
+                cells: <DataCell>[
+                  DataCell(Text('Sarah')),
+                  DataCell(Text('19')),
+                  DataCell(Text('Student')),
+                  DataCell(Text('Student')),
+                  DataCell(Text('Student')),
+                  DataCell(Text('Student')),
+                  DataCell(Text('Student')),
+                ],
+              ),
+              DataRow(
+
+                cells: <DataCell>[
+                  DataCell(Text('Janine')),
+                  DataCell(Text('43')),
+                  DataCell(Text('Professor')),
+                  DataCell(Text('Student')),
+                  DataCell(Text('Student')),
+                  DataCell(Text('Student')),
+                  DataCell(Text('Student')),
+                ],
+              ),
+              DataRow(
+                cells: <DataCell>[
+                  DataCell(Text('William')),
+                  DataCell(Text('27')),
+                  DataCell(Text('Associate Professor')),
+                  DataCell(Text('Student')),
+                  DataCell(Text('Student')),
+                  DataCell(Text('Student')),
+                  DataCell(Text('Student')),
+                ],
+              ),
+
             ],
-          ),
+
+          )
         ),
+    )
+        )
     );
   }
 }
